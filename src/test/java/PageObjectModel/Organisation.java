@@ -1,7 +1,10 @@
 package PageObjectModel;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class Organisation {
@@ -12,7 +15,7 @@ WebDriver driver;
 		this.driver = driver;
 	}
 	
-	public void orgnisation() throws InterruptedException {
+	public void orgnisation() throws InterruptedException, IOException {
 		/*Adding a Organization */
        driver.findElement(By.xpath("//a[normalize-space()='Master Data']")).click();
        driver.findElement(By.xpath("//a[normalize-space()='Organizations']")).click();
@@ -112,10 +115,10 @@ WebDriver driver;
        driver.findElement(By.xpath("(//textarea[@id='address'])")).clear();
        driver.findElement(By.xpath("(//textarea[@id='address'])")).sendKeys("1180, kaora rompound, Bhopal, Madhya Pradesh 452001");
        /*photo upload*/
-//       WebElement photoup = driver.findElement(By.xpath("//*[@id=\"editModal\"]/div/div[2]/div/div[2]/form/div[5]/img"));
-//       photoup.click();
-//       photoup.sendKeys("C:\\Users\\Ncs.NET\\Desktop\\Images\\india.png");
-//       
+       WebElement photoup = driver.findElement(By.xpath("//*[@id=\"editModal\"]/div/div[2]/div/div[2]/form/div[5]/img"));
+       photoup.click();
+       Thread.sleep(2000);
+       Runtime.getRuntime().exec("C:\\Users\\Ncs.NET\\eclipse-workspace\\SSOSUITE\\OrgImage.exe");
        driver.findElement(By.xpath("(//button[normalize-space()='Save'])[1]")).click();
        Thread.sleep(2000);
        driver.findElement(By.xpath("(//button[normalize-space()='Close'])[1]")).click();

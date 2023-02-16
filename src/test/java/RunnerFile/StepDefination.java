@@ -1,5 +1,6 @@
 package RunnerFile;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -36,7 +37,7 @@ public class StepDefination {
 	}
 	
 	@Test(priority = 1)
-	public void MasterData() throws InterruptedException {
+	public void MasterData() throws InterruptedException, IOException {
 		masterdataOrg.orgnisation();
 		masterdataApp.Application();
 	}
