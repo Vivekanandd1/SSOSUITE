@@ -6,6 +6,7 @@
       <class name="RunnerFile.StepDefination">
         <methods>
           <include name="setUp"/>
+          <include name="Login"/>
           <include name="MasterData"/>
         </methods>
       </class> <!-- RunnerFile.StepDefination -->
