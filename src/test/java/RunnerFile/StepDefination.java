@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import PageObjectModel.Applications;
 import PageObjectModel.LogInLogOut;
 import PageObjectModel.Organisation;
+import PageObjectModel.User;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StepDefination {
@@ -18,6 +19,7 @@ public class StepDefination {
 	LogInLogOut InOut;
 	Organisation masterdataOrg;
 	Applications masterdataApp;
+	User users;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -29,6 +31,7 @@ public class StepDefination {
 	  	InOut = new LogInLogOut(driver);
 	  	masterdataOrg = new Organisation(driver);
 	  	masterdataApp = new Applications(driver);
+	  	users = new User(driver);
 	}
 	
 	@Test(priority = 0)
@@ -38,8 +41,9 @@ public class StepDefination {
 	
 	@Test(priority = 1)
 	public void MasterData() throws InterruptedException, IOException {
-		masterdataOrg.orgnisation();
-		masterdataApp.Application();
+//		masterdataOrg.orgnisation();
+//		masterdataApp.Application();
+		users.UserAddition("AAAAAAAA", "BBBBBB", "cc@cc.cc", "pass1243", "1234567890", "cc@cc.cc");
 	}
 	
 	
