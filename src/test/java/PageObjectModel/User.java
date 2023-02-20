@@ -79,7 +79,22 @@ public class User {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
-		 
+		 }
+	public void UserEdit() throws InterruptedException {
+		driver.findElement(By.xpath("(//button[@Title='Edit'])[1]")).click();
+		Thread.sleep(2000);
+		 driver.findElement(By.xpath("(//input[@id='firstName'])[2]")).sendKeys("xxxx");
+		 driver.findElement(By.xpath("(//input[@id='lastName'])[2]")).sendKeys("dddd");
+		 driver.findElement(By.xpath("(//input[@id='loginId'])[2]")).sendKeys("C");
+		 driver.findElement(By.xpath("(//input[@id='password'])[1]")).sendKeys("5");
+		 driver.findElement(By.xpath("(//input[@id='phone'])[1]")).clear();
+		 driver.findElement(By.xpath("(//input[@id='phone'])[1]")).sendKeys("8109772505");
+		 Select GenSelect = new Select(driver.findElement(By.xpath("(//select[@id='gender'])[1]")));
+		 GenSelect.selectByVisibleText("Female");
+		 driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		 Thread.sleep(2000);
+		 driver.findElement(By.xpath("(//button[normalize-space()='Close'])[1]")).click();
+		 Thread.sleep(2000);
 		
 	}
 

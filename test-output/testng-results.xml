@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="67998" started-at="2023-02-20T12:16:06 IST" finished-at="2023-02-20T12:17:14 IST">
+  <suite name="Default suite" duration-ms="71434" started-at="2023-02-20T12:42:42 IST" finished-at="2023-02-20T12:43:54 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="67998" started-at="2023-02-20T12:16:06 IST" finished-at="2023-02-20T12:17:14 IST">
+    <test name="Default test" duration-ms="71434" started-at="2023-02-20T12:42:42 IST" finished-at="2023-02-20T12:43:54 IST">
       <class name="RunnerFile.StepDefination">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:RunnerFile.StepDefination@10d59286]" name="setUp" is-config="true" duration-ms="4531" started-at="2023-02-20T12:16:06 IST" finished-at="2023-02-20T12:16:11 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:RunnerFile.StepDefination@10d59286]" name="setUp" is-config="true" duration-ms="4242" started-at="2023-02-20T12:42:42 IST" finished-at="2023-02-20T12:42:47 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:RunnerFile.StepDefination@10d59286]" name="Login" duration-ms="4030" started-at="2023-02-20T12:16:11 IST" finished-at="2023-02-20T12:16:15 IST">
+        <test-method status="PASS" signature="Login()[pri:0, instance:RunnerFile.StepDefination@10d59286]" name="Login" duration-ms="2484" started-at="2023-02-20T12:42:47 IST" finished-at="2023-02-20T12:42:49 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="MasterData()[pri:1, instance:RunnerFile.StepDefination@10d59286]" name="MasterData" duration-ms="48541" started-at="2023-02-20T12:16:15 IST" finished-at="2023-02-20T12:17:03 IST">
+        <test-method status="PASS" signature="MasterData()[pri:1, instance:RunnerFile.StepDefination@10d59286]" name="MasterData" duration-ms="53823" started-at="2023-02-20T12:42:49 IST" finished-at="2023-02-20T12:43:43 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MasterData -->
-        <test-method status="PASS" signature="LogOut()[pri:2, instance:RunnerFile.StepDefination@10d59286]" name="LogOut" duration-ms="10820" started-at="2023-02-20T12:17:03 IST" finished-at="2023-02-20T12:17:14 IST">
+        <test-method status="PASS" signature="LogOut()[pri:2, instance:RunnerFile.StepDefination@10d59286]" name="LogOut" duration-ms="10813" started-at="2023-02-20T12:43:43 IST" finished-at="2023-02-20T12:43:54 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogOut -->
