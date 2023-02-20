@@ -1,5 +1,7 @@
 package PageObjectModel;
 
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -80,6 +82,7 @@ public class User {
 		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		 }
+	
 	public void UserEdit() throws InterruptedException {
 		driver.findElement(By.xpath("(//button[@Title='Edit'])[1]")).click();
 		Thread.sleep(2000);
@@ -95,7 +98,20 @@ public class User {
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("(//button[normalize-space()='Close'])[1]")).click();
 		 Thread.sleep(2000);
-		
 	}
+	
+	public void UserAppRole() throws InterruptedException {
+		driver.findElement(By.xpath("(//button[@data-target='#editRoleModal'])[1]")).click();
+		Thread.sleep(2000);
+		Select AppSelect = new Select(driver.findElement(By.xpath("//Select[@name='appId']")));
+		AppSelect.selectByVisibleText("HRMS");
+		Select RoleSelect = new  Select(driver.findElement(By.xpath("(//Select[@name='roleId'])[2]")));
+		RoleSelect.selectByVisibleText("Admin");
+		driver.findElement(By.xpath("(//button[normalize-space()='Add'])[2]")).click();
+		 Thread.sleep(2000);
+		 driver.findElement(By.xpath("(//button[normalize-space()='Close'])[2]")).click();
+		 Thread.sleep(2000);
+	}
+	
 
 }

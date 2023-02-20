@@ -46,6 +46,8 @@ public class StepDefination {
 		users.UserAddition("AAAAAAAA", "BBBBBB", "cc@cc.cc", "pass1243", "1234567890", "cc@cc.cc");
 		users.Search();
 		users.UserEdit();
+		users.UserAppRole();
+		
 	}
 	
 	
