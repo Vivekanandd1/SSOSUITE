@@ -41,21 +41,29 @@ public class User {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(2000);
 		 driver.findElement(By.xpath("(//input[@id='lastName'])[1]")).sendKeys("BBBBBB");
 		 driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//input[@id='loginId'])[1]")).sendKeys("cc@cc.cc");
 		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(2000);
 		 Select OrgSelect = new Select(driver.findElement(By.xpath("(//select[@id='orgId'])[1]")));
 		 OrgSelect.selectByVisibleText("NCS");
 		 driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		Select StatusSelect = new Select(driver.findElement(By.xpath("(//select[@id='status'])[1]")));
 		 StatusSelect.selectByVisibleText("Active");
@@ -68,6 +76,8 @@ public class User {
 	   driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(2000);
 		 
 		
