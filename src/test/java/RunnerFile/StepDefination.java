@@ -47,6 +47,7 @@ public class StepDefination {
 		users.Search();
 		users.UserEdit();
 		users.UserAppRole();
+		users.DeleteUser();
 		
 	}
 	

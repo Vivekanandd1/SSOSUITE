@@ -2,6 +2,8 @@ package PageObjectModel;
 
 
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -83,7 +85,7 @@ public class User {
 		Thread.sleep(2000);
 		 }
 	
-	public void UserEdit() throws InterruptedException {
+	public void UserEdit() throws InterruptedException, IOException {
 		driver.findElement(By.xpath("(//button[@Title='Edit'])[1]")).click();
 		Thread.sleep(2000);
 		 driver.findElement(By.xpath("(//input[@id='firstName'])[2]")).sendKeys("xxxx");
@@ -94,6 +96,10 @@ public class User {
 		 driver.findElement(By.xpath("(//input[@id='phone'])[1]")).sendKeys("8109772505");
 		 Select GenSelect = new Select(driver.findElement(By.xpath("(//select[@id='gender'])[1]")));
 		 GenSelect.selectByVisibleText("Female");
+		 driver.findElement(By.xpath("//img[@width='200px']")).click();
+		 Thread.sleep(2000);
+	     Runtime.getRuntime().exec("C:\\Users\\Ncs.NET\\eclipse-workspace\\SSOSUITE\\OrgImage.exe");
+	     Thread.sleep(1000);
 		 driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("(//button[normalize-space()='Close'])[1]")).click();
@@ -111,6 +117,14 @@ public class User {
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("(//button[normalize-space()='Close'])[2]")).click();
 		 Thread.sleep(2000);
+	}
+	
+	public void DeleteUser() throws InterruptedException {
+		driver.findElement(By.xpath("(//button[@title='Delete'])[1]")).click();
+		Thread.sleep(1000);
+	     driver.switchTo().alert().accept();
+	        Thread.sleep(2000);
+		
 	}
 	
 
