@@ -22,8 +22,11 @@ public class LogInLogOut {
 	}
 	
 	public void Logout() throws InterruptedException {
-		Thread.sleep(10000);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("(//a[@id='navbarDropdownMenuLink'])[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[@routerlink='login/logout']")).click();
+		Thread.sleep(2000);
 		driver.quit();
-	}
-
+    }
 }

@@ -5,6 +5,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import PageObjectModel.Applications;
@@ -41,18 +42,16 @@ public class StepDefination {
 	
 	@Test(priority = 1)
 	public void MasterData() throws InterruptedException, IOException {
-//		masterdataOrg.orgnisation();
-//		masterdataApp.Application();
+		masterdataOrg.orgnisation();
+		masterdataApp.Application();
 		users.UserAddition("AAAAAAAA", "BBBBBB", "cc@cc.cc", "pass1243", "1234567890", "cc@cc.cc");
 		users.Search();
 		users.UserEdit();
 		users.UserAppRole();
 		users.DeleteUser();
-		
 	}
 	
-	
-	@Test(priority = 2)
+	@AfterTest
 	public void LogOut() throws InterruptedException {
 		InOut.Logout();
 	}
