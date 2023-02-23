@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class User {
@@ -96,10 +97,11 @@ public class User {
 		 driver.findElement(By.xpath("(//input[@id='phone'])[1]")).sendKeys("8109772505");
 		 Select GenSelect = new Select(driver.findElement(By.xpath("(//select[@id='gender'])[1]")));
 		 GenSelect.selectByVisibleText("Female");
-		 driver.findElement(By.xpath("//img[@width='200px']")).click();
+		 WebElement photoup = driver.findElement(By.xpath("//img[@width='200px']"));
+		 photoup.click();
 		 Thread.sleep(2000);
 	     Runtime.getRuntime().exec("C:\\Users\\Ncs.NET\\eclipse-workspace\\SSOSUITE\\OrgImage.exe");
-	     Thread.sleep(1000);
+	     Thread.sleep(3000);
 		 driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("(//button[normalize-space()='Close'])[1]")).click();
@@ -124,7 +126,6 @@ public class User {
 		Thread.sleep(1000);
 	     driver.switchTo().alert().accept();
 	        Thread.sleep(2000);
-		
 	}
 	
 
