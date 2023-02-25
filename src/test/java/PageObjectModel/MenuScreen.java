@@ -30,5 +30,33 @@ public class MenuScreen {
 		 driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		 Thread.sleep(2000);
+	}
+	
+	public void Searchmenu() throws InterruptedException{
+		driver.findElement(By.xpath("(//input[@id='label'])[1]")).sendKeys("TestData");
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//input[@id='label'])[1]")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//input[@id='menuName'])[1]")).sendKeys("testData");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//input[@id='menuName'])[1]")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//input[@id='submenuName'])[1]")).sendKeys("Master Data");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//input[@id='submenuName'])[1]")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(3000);
+		
 	}
 }

@@ -66,6 +66,7 @@ public class StepDefination {
 //		users.UserAppRole();
 //		users.DeleteUser();
 		menuscreen.AppMenu();
+		menuscreen.Searchmenu();
 	}
 	
 	@AfterTest
