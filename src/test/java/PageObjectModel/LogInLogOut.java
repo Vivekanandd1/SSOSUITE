@@ -14,7 +14,7 @@ public class LogInLogOut {
 	}
 
 	public void login() {
-		driver.get("http://85.25.93.180:8080/NCSSSO/#/login");
+		driver.get("https://test.nenosystems.in/NCSSSO/#/login");
 		driver.findElement(By.id("loginid")).sendKeys("vivekanand.deshmukh@nenosystems.in");
 		driver.findElement(By.id("password")).sendKeys("pass1234");
 		driver.findElement(By.xpath("(//button[@type='submit'])[1]")).click();

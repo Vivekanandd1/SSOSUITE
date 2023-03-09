@@ -1,12 +1,14 @@
 package PageObjectModel;
-
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class MenuScreen {
 
 	WebDriver driver;
+	
 	public MenuScreen(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -57,6 +59,57 @@ public class MenuScreen {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
 		Thread.sleep(3000);
+	}
+	
+	public void RoleMenuAssignement() throws InterruptedException {
+		driver.findElement(By.xpath("//a[@href='#/menuassignment/48']")).click();
+		Thread.sleep(1000);
+		Select slct = new Select(driver.findElement(By.xpath("(//select[@id='roleId'])[2]")));
+		slct.selectByVisibleText("Admin");
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		Thread.sleep(1000);
+		/*Assigning a menu for a role*/
+		List<WebElement> menuitem1 = driver.findElements(By.xpath("//td/table/tbody[1]/tr/td[3]"));
+		List<WebElement> checkbox1 = driver.findElements(By.xpath("//td/table/tbody[1]/tr/td/input"));
+		for (int i=0;i<=menuitem1.size();i++) {
+//		    System.out.println(menuitem.get(i).getText());
+		    if(menuitem1.get(i).getText().equalsIgnoreCase("TestData")) {
+		    	checkbox1.get(i).click();
+		    	break;
+			}
+			else {
+				System.out.println("Menu not present");
+			}	
+		}
+		Thread.sleep(1000);	
+		driver.findElement(By.xpath("//body//app-root//table//button[1]")).click();	
+		/*Unassigns a menu from a role*/
+		Thread.sleep(2000);	
+		List<WebElement> menuitem = driver.findElements(By.xpath("//td/table/tbody[1]/tr/td[3]"));
+		List<WebElement> checkbox = driver.findElements(By.xpath("//td/table/tbody[1]/tr/td/input"));
+		for (int i=0;i<=menuitem.size();i++) {
+//		    System.out.println(menuitem.get(i).getText());
+		    if(menuitem.get(i).getText().equalsIgnoreCase("TestData")) {
+		    	checkbox.get(i).click();
+//		    	System.out.println("finally");
+		    	break;
+			}
+			else {
+				System.out.println("Menu not present");
+			}		    
+		}					
+		Thread.sleep(1000);	
+		driver.findElement(By.xpath("//body//app-root//table//button[2]")).click();	
+		Thread.sleep(2000);	
+		driver.findElement(By.xpath("//a[normalize-space()='Application']")).click();
+	}
+	
+	public void MenuDeletion() throws InterruptedException{
+		Thread.sleep(3000);
+		     driver.findElement(By.xpath("(//button[@title='Delete'])[1]")).click();
+		     Thread.sleep(1000);
+		     driver.switchTo().alert().accept();
+		        Thread.sleep(2000);
 		
 	}
 }
