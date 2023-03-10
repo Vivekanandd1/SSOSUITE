@@ -101,15 +101,28 @@ public class MenuScreen {
 		Thread.sleep(1000);	
 		driver.findElement(By.xpath("//body//app-root//table//button[2]")).click();	
 		Thread.sleep(2000);	
-		driver.findElement(By.xpath("//a[normalize-space()='Application']")).click();
+		driver.findElement(By.xpath("//a[normalize-space()='Menu Items']")).click();
 	}
 	
 	public void MenuDeletion() throws InterruptedException{
 		Thread.sleep(3000);
-		     driver.findElement(By.xpath("(//button[@title='Delete'])[1]")).click();
+		List<WebElement> menulist = driver.findElements(By.xpath("//table/tbody/tr/td[5]"));
+		List<WebElement> DeleteBtn =driver.findElements(By.xpath("//button[@title='Delete']"));
+		for (int i=0;i<=menulist.size();i++) {
+//		    System.out.println(menuitem.get(i).getText());
+		    if(menulist.get(i).getText().equalsIgnoreCase("testdata")) {
+//		    	System.out.println("finally");
+		    	DeleteBtn.get(i).click();
+		    	break;
+			}
+			else {
+				System.out.println("Menu not present");
+			}		    
+		  
 		     Thread.sleep(1000);
 		     driver.switchTo().alert().accept();
 		        Thread.sleep(2000);
 		
 	}
+}
 }
