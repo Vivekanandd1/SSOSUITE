@@ -19,7 +19,7 @@ public class MenuScreen {
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("(//a[@class='dropdown-item'])[1]")).click();
 		 Thread.sleep(1000);
-		 driver.findElement(By.xpath("//a[@href='#/menulist/48']")).click();
+		 driver.findElement(By.xpath("//a[@href='#/menulist/86']")).click();
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("(//button[@data-target='#editModal'])[1]")).click();
 		 Thread.sleep(1000);
@@ -109,18 +109,18 @@ public class MenuScreen {
 		List<WebElement> menulist = driver.findElements(By.xpath("//table/tbody/tr/td[5]"));
 		List<WebElement> DeleteBtn =driver.findElements(By.xpath("//button[@title='Delete']"));
 		for (int i=0;i<=menulist.size();i++) {
-//		    System.out.println(menuitem.get(i).getText());
 		    if(menulist.get(i).getText().equalsIgnoreCase("testdata")) {
-//		    	System.out.println("finally");
 		    	DeleteBtn.get(i).click();
+		    	driver.switchTo().alert().accept();
 		    	break;
+		    	   
 			}
 			else {
 				System.out.println("Menu not present");
 			}		    
 		  
 		     Thread.sleep(1000);
-		     driver.switchTo().alert().accept();
+		  
 		        Thread.sleep(2000);
 		
 	}

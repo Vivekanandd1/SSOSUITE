@@ -31,8 +31,9 @@ public class StepDefination {
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
-		WebDriverManager.chromedriver().setup();
+//		WebDriverManager.chromedriver().setup();
 		opt = new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");
 		opt.setExperimentalOption("excludeSwitches",Arrays.asList("disable-popup-blocking","enable-automation"));
 		Map<String, Object> prefs = new HashMap<String, Object>();
 		prefs.put("credentials_enable_service", false);
