@@ -62,7 +62,7 @@ public class MenuScreen {
 	}
 	
 	public void RoleMenuAssignement() throws InterruptedException {
-		driver.findElement(By.xpath("//a[@href='#/menuassignment/48']")).click();
+		driver.findElement(By.xpath("//a[@href='#/menuassignment/86']")).click();
 		Thread.sleep(1000);
 		Select slct = new Select(driver.findElement(By.xpath("(//select[@id='roleId'])[2]")));
 		slct.selectByVisibleText("Admin");
