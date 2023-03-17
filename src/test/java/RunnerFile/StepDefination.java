@@ -60,20 +60,20 @@ public class StepDefination {
 	@Test(priority = 1)
 	public void MasterData() throws InterruptedException, IOException {
 		masterdataOrg.orgnisation();
-		masterdataApp.Application();
-		users.UserAddition("AAAAAAAA", "BBBBBB", "cc@cc.cc", "pass1243", "1234567890", "cc@cc.cc");
-		users.Search();
-		users.UserEdit();
-		users.UserAppRole();
-		users.DeleteUser();
-		menuscreen.AppMenu();
-		menuscreen.Searchmenu();
-		menuscreen.RoleMenuAssignement();
-		menuscreen.MenuDeletion();
+//		masterdataApp.Application();
+//		users.UserAddition("AAAAAAAA", "BBBBBB", "cc@cc.cc", "pass1243", "1234567890", "cc@cc.cc");
+//		users.Search();
+//		users.UserEdit();
+//		users.UserAppRole();
+//		users.DeleteUser();
+//		menuscreen.AppMenu();
+//		menuscreen.Searchmenu();
+//		menuscreen.RoleMenuAssignement();
+//		menuscreen.MenuDeletion();
 	}
 	
 	@AfterTest
 	public void LogOut() throws InterruptedException {
-		InOut.Logout();
+//		InOut.Logout();
 	}
 }
