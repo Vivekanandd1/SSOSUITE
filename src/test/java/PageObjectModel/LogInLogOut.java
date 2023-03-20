@@ -16,7 +16,7 @@ public class LogInLogOut {
 	public void login() {
 		driver.get("https://dev.nenosystems.in/SSO/#/login");
 		driver.findElement(By.id("loginid")).sendKeys("vivekanand.deshmukh@nenosystems.in");
-		driver.findElement(By.id("password")).sendKeys("pass1234");
+		driver.findElement(By.id("password")).sendKeys("pass12345");
 		driver.findElement(By.xpath("(//button[@type='submit'])[1]")).click();
 		
 		
