@@ -36,17 +36,17 @@ public class Organisation {
 		Select slct = new Select(driver.findElement(By.xpath("(//select[@id='status'])[2]")));
 		slct.selectByValue("Inactive");
 		driver.findElement(By.xpath("(//textarea[@id='address'])"))
-				.sendKeys("80, Jaora Compound, Indore, Madhya Pradesh 452001");
+		.sendKeys("80, Jaora Compound, Indore, Madhya Pradesh 452001");
 		driver.findElement(By.xpath("(//button[normalize-space()='Save'])[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//button[normalize-space()='Close'])[1]")).click();
 		Thread.sleep(2000);
-//		driver.findElement(By.xpath("(//button[@title='Info'])[2]")).click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("(//button[@aria-label='Close'])[1]")).click();
-//		Thread.sleep(2000);
+		//		driver.findElement(By.xpath("(//button[@title='Info'])[2]")).click();
+		//		Thread.sleep(2000);
+		//		driver.findElement(By.xpath("(//button[@aria-label='Close'])[1]")).click();
+		//		Thread.sleep(2000);
 
-//       
+		//       
 		/*
 		 * Search functionality single
 		 * driver.findElement(By.xpath("(//input[@id='name'])[1]")).sendKeys(
@@ -83,44 +83,48 @@ public class Organisation {
 		Thread.sleep(2000);
 
 		/* Application Assignment */
-		Thread.sleep(2000);
 		List<WebElement> OrgName = driver.findElements(By.xpath("//div/table/tbody/tr/td[3]"));
-//            for(int i=0;i<=OrgName.size();i++) {
-//            	System.out.println(OrgName.get(i).getText());
-//            }
 		List<WebElement> AppAssignment = driver
 				.findElements(By.xpath("//div/table/tbody/tr/td[11]/div/button[@data-target='#assignApps']"));
-			for (int i = 0; i < OrgName.size(); i++) {
-				if (OrgName.get(i).getText().equals(OrgnizationName)) {
-					AppAssignment.get(i).click();
-					Select slct2 = new Select(driver.findElement(By.xpath("//select[@id='appId']")));
-					slct2.selectByValue("16");
-					driver.findElement(By.xpath("(//button[normalize-space()='Add'])[2]")).click();
-					Thread.sleep(2000);
-					driver.findElement(By.xpath("(//button[normalize-space()='Save'])[2]")).click();
-					Thread.sleep(2000);
-					driver.findElement(By.xpath("(//button[normalize-space()='Close'])[2]")).click();
-					Thread.sleep(2000);
-			}
-		} 
-
-		/* Editing a Organization */
-		Thread.sleep(4000);
-
-		/* Orgnization delete */
-		try {
-		List<WebElement> Orgdeletion = driver.findElements(By.xpath("//div/table/tbody/tr/td[11]/div/button[@title='Delete']"));
 		for (int i = 0; i < OrgName.size(); i++) {
 			if (OrgName.get(i).getText().equals(OrgnizationName)) {
-				Orgdeletion.get(i).click();
-				driver.switchTo().alert().accept();
+				AppAssignment.get(i).click();
+				Select slct2 = new Select(driver.findElement(By.xpath("//select[@id='appId']")));
+				slct2.selectByValue("16");
+				driver.findElement(By.xpath("(//button[normalize-space()='Add'])[2]")).click();
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("(//button[normalize-space()='Save'])[2]")).click();
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("(//button[normalize-space()='Close'])[2]")).click();
+				Thread.sleep(2000);
+			}
+		} 
+		/* InfoBTN */
+		List<WebElement> InfoBtn = driver.findElements(By.xpath("//div/table/tbody/tr/td[10]/app-info-button/div/button[@title='Info']"));
+		for (int i = 0; i < OrgName.size(); i++) {
+			if (OrgName.get(i).getText().equals(OrgnizationName)) {
+				InfoBtn.get(i).click();
 			}
 		}
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//div/button[@aria-label='Close'])[1]")).click();
+		Thread.sleep(2000);
+		
+		/* Orgnization delete */
+		try {
+			List<WebElement> Orgdeletion = driver.findElements(By.xpath("//div/table/tbody/tr/td[11]/div/button[@title='Delete']"));
+			for (int i = 0; i < OrgName.size(); i++) {
+				if (OrgName.get(i).getText().equals(OrgnizationName)) {
+					Orgdeletion.get(i).click();
+					Thread.sleep(2000);
+					driver.switchTo().alert().accept();
+				}
+			}
 		}
 		catch (StaleElementReferenceException e) {
 			System.out.println("second Exception handeled");
 		}
 
-		}
 	}
+}
 
