@@ -1,6 +1,8 @@
 package PageObjectModel;
 
 import java.io.IOException;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,7 +24,7 @@ WebDriver driver;
 
 	     /*Application Addition*/
 	     driver.findElement(By.xpath("(//button[normalize-space()='Add'])[1]")).click();
-	     driver.findElement(By.xpath("(//input[@name='name'])[2]")).sendKeys("AAAAAAAAAAAAA");
+	     driver.findElement(By.xpath("(//input[@name='name'])[2]")).sendKeys("TestApp");
 	     driver.findElement(By.xpath("(//input[@name='email'])[1]")).sendKeys("AAA@AAA.AAA");
 	     driver.findElement(By.xpath("(//input[@name='appUrl'])[1]")).sendKeys("www.AAAAAA.com");
 	     driver.findElement(By.xpath("(//input[@name='phone'])[1]")).sendKeys("1234567890");
@@ -34,40 +36,34 @@ WebDriver driver;
 	     driver.findElement(By.xpath("(//button[normalize-space()='Close'])[1]")).click();
 	     
 	     /*Search functionality*/
-	     driver.findElement(By.xpath("(//input[@name='name'])[1]")).sendKeys("AAAAAAAAAAAAA");
-	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
-	     Thread.sleep(1000);
-	     String Skey = driver.findElement(By.xpath("//table/tbody/tr/td[4]")).getText();
-	     System.out.println(Skey);
-	     driver.findElement(By.xpath("//input[@id='applicationCode']")).sendKeys(Skey);
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
-	     Thread.sleep(1000);
+//	     driver.findElement(By.xpath("(//input[@name='name'])[1]")).sendKeys("TestApp");
+//	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+//	     Thread.sleep(1000);
+//	     driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
+//	     Thread.sleep(1000);
+//	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+//	     Thread.sleep(1000);
+//	     String Skey = driver.findElement(By.xpath("//table/tbody/tr/td[4]")).getText();
+//	     System.out.println(Skey);
+//	     driver.findElement(By.xpath("//input[@id='applicationCode']")).sendKeys(Skey);
+//	     Thread.sleep(1000);
+//	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+//	     Thread.sleep(1000);
+//	     driver.findElement(By.xpath("//button[normalize-space()='Reset']")).click();
+//	     Thread.sleep(1000);
+//	     driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+//	     Thread.sleep(1000);
 	     
-	     /*info Button details*/
-	     driver.findElement(By.xpath("(//button[@title='Info'])[1]")).click();
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("(//button[@aria-label='Close'])[1]")).click();
-	     Thread.sleep(1000);
 	     
 	     /*Edit Functionality*/
-	     driver.findElement(By.xpath("(//button[@title='Edit'])[1]")).click();
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("(//input[@name='name'])[2]")).sendKeys("AAAAAAAAAAAAABBB");
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("(//input[@name='email'])[1]")).sendKeys("AAA@AAA.AABB");
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("(//input[@name='appUrl'])[1]")).sendKeys("www.AABBAA.com");
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("(//input[@name='phone'])[1]")).sendKeys("1122334455");
+	     List<WebElement> AppName = driver.findElements(By.xpath("//tr/td[3]"));
+			List<WebElement> AppEdit = driver.findElements(By.xpath("//tr/td/div/button[@title='Edit']"));
+			for (int i = 0; i < AppName.size(); i++) {
+				if (AppName.get(i).getText().equals("TestApp")) {
+					AppEdit.get(i).click();	
+				}
+			}
+	     driver.findElement(By.xpath("(//input[@name='name'])[2]")).sendKeys("SS");
 	     Thread.sleep(1000);
 	     Select slct1 = new Select(driver.findElement(By.xpath("(//select[@id='status'])[1]")));
 	     slct1.selectByValue("Active");
@@ -89,15 +85,16 @@ WebDriver driver;
 	     driver.findElement(By.xpath("(//button[@aria-label='Close'])[1]")).click();
 	     
 	     /*Deletion of application*/
-	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("(//button[@title='Delete'])[1]")).click();
+	     List<WebElement> Appdelete = driver.findElements(By.xpath("//tr/td/div/button[@title='Delete']"));
+			for (int i = 0; i < AppName.size(); i++) {
+				if (AppName.get(i).getText().equals("TestAppSS")) {
+					Appdelete.get(i).click();	
+				}
+			}
 	     Thread.sleep(1000);
 	     driver.switchTo().alert().accept();
 	        Thread.sleep(2000);
 		}
-	     
-		
-		
 	}
 	
 
