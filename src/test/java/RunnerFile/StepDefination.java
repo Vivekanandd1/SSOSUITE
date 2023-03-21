@@ -74,6 +74,6 @@ public class StepDefination {
 	
 	@AfterTest
 	public void LogOut() throws InterruptedException {
-		InOut.Logout();
+//		InOut.Logout();
 	}
 }
