@@ -128,10 +128,22 @@ public class Organisation {
 		Thread.sleep(2000);
 
 		/* Orgnization delete */
-		driver.findElement(By.xpath("(//div/table/tbody/tr/td[11]/div/button[@title='Delete'])[4]")).click();
-		Thread.sleep(1000);
-		driver.switchTo().alert().accept();
-		Thread.sleep(2000);
+//		driver.findElement(By.xpath("(//div/table/tbody/tr/td[11]/div/button[@title='Delete'])[4]")).click();
+//		Thread.sleep(1000);
+//		driver.switchTo().alert().accept();
+//		Thread.sleep(2000);
+		
+		 List<WebElement> OrgName1 = driver.findElements(By.xpath("//div/table/tbody/tr/td[3]"));
+	     List<WebElement> orgdelete = driver.findElements(By.xpath("//div/table/tbody/tr/td[11]/div/button[@title='Delete']"));
+			for (int i = 0; i < OrgName1.size(); i++) {
+				if (OrgName1.get(i).getText().equals(ChangedOrgnizationName)) {
+					orgdelete.get(i).click();	
+					Thread.sleep(1000);
+				     driver.switchTo().alert().accept();
+				}
+			}
+			
+	     Thread.sleep(2000);
 
 
 	}
