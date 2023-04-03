@@ -12,6 +12,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import PageObjectModel.AppRedirect;
 import PageObjectModel.Applications;
 import PageObjectModel.LogInLogOut;
 import PageObjectModel.MenuScreen;
@@ -28,6 +30,7 @@ public class StepDefination {
 	Applications masterdataApp;
 	MenuScreen menuscreen;
 	User users;
+	AppRedirect Redirect;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -50,6 +53,7 @@ public class StepDefination {
 	  	masterdataApp = new Applications(driver);
 	  	menuscreen = new MenuScreen(driver);
 	  	users = new User(driver);
+	  	Redirect = new AppRedirect(driver);
 	}
 	
 	@Test(priority = 0)
@@ -59,21 +63,22 @@ public class StepDefination {
 	
 	@Test(priority = 1)
 	public void MasterData() throws InterruptedException, IOException {
-		masterdataOrg.orgnisation();
-		masterdataApp.Application();
-		users.UserAddition("AAAAAAAA", "BBBBBB", "cc@cc.cc", "pass1243", "1234567890", "cc@cc.cc");
-		users.Search();
-		users.UserEdit();
-		users.UserAppRole();
-		users.DeleteUser();
-		menuscreen.AppMenu();
-		menuscreen.Searchmenu();
-		menuscreen.RoleMenuAssignement();
-		menuscreen.MenuDeletion();
+//		masterdataOrg.orgnisation();
+//		masterdataApp.Application();
+//		users.UserAddition("AAAAAAAA", "BBBBBB", "cc@cc.cc", "pass1243", "1234567890", "cc@cc.cc");
+//		users.Search();
+//		users.UserEdit();
+//		users.UserAppRole();
+//		users.DeleteUser();
+//		menuscreen.AppMenu();
+//		menuscreen.Searchmenu();
+//		menuscreen.RoleMenuAssignement();
+//		menuscreen.MenuDeletion();
+		Redirect.Redirect();
 	}
 	
 	@AfterTest
 	public void LogOut() throws InterruptedException {
-		InOut.Logout();
+//		InOut.Logout();
 	}
 }
