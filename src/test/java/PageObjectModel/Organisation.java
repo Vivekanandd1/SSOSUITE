@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -97,20 +98,28 @@ public class Organisation {
 			}
 		} 
 		/* InfoBTN */
+		List<WebElement> OrgName2 = driver.findElements(By.xpath("//div/table/tbody/tr/td[3]"));
 		List<WebElement> InfoBtn = driver.findElements(By.xpath("//div/table/tbody/tr/td[10]/app-info-button/div/button[@title='Info']"));
-		for (int i = 0; i < OrgName.size(); i++) {
-			if (OrgName.get(i).getText().equals(OrgnizationName)) {
+		for (int i = 0; i < OrgName2.size(); i++) {
+			if (OrgName2.get(i).getText().equals(OrgnizationName)) {
 				InfoBtn.get(i).click();
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",InfoBtn.get(i));
+				Thread.sleep(1000); 
 			}
 		}
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//div/button[@aria-label='Close'])[1]")).click();
-		Thread.sleep(2000);
+		for (int i = 0; i < OrgName2.size(); i++) {
+			if (OrgName2.get(i).getText().equals(OrgnizationName)) {
+				InfoBtn.get(i).click();
+			}
+		}
+		
 
 		/* Orgnization Edit Functionality */
+		List<WebElement> OrgName3 = driver.findElements(By.xpath("//div/table/tbody/tr/td[3]"));
 		List<WebElement> EditBtn = driver.findElements(By.xpath("//div/table/tbody/tr/td[11]/div/button[@title='Edit']"));
-		for (int i = 0; i < OrgName.size(); i++) {
-			if (OrgName.get(i).getText().equals(OrgnizationName)) {
+		for (int i = 0; i < OrgName3.size(); i++) {
+			if (OrgName3.get(i).getText().equals(OrgnizationName)) {
 				EditBtn.get(i).click();
 			}
 		}

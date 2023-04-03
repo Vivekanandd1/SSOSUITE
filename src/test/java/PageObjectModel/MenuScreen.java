@@ -19,7 +19,7 @@ public class MenuScreen {
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("(//a[@class='dropdown-item'])[1]")).click();
 		 Thread.sleep(1000);
-		 driver.findElement(By.xpath("//a[@href='#/menulist/86']")).click();
+		 driver.findElement(By.xpath("//a[@href='#/menulist/57']")).click();
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("(//button[@data-target='#editModal'])[1]")).click();
 		 Thread.sleep(1000);
@@ -62,7 +62,7 @@ public class MenuScreen {
 	}
 	
 	public void RoleMenuAssignement() throws InterruptedException {
-		driver.findElement(By.xpath("//a[@href='#/menuassignment/86']")).click();
+		driver.findElement(By.xpath("//a[@href='#/menuassignment/57']")).click();
 		Thread.sleep(1000);
 		Select slct = new Select(driver.findElement(By.xpath("(//select[@id='roleId'])[2]")));
 		slct.selectByVisibleText("Admin");
@@ -78,7 +78,7 @@ public class MenuScreen {
 		    	break;
 			}
 			else {
-				System.out.println("Menu not present");
+				System.out.println(".");
 			}	
 		}
 		Thread.sleep(1000);	

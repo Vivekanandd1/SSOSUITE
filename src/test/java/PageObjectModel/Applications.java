@@ -83,7 +83,8 @@ WebDriver driver;
 	     /*info button*/
 	     driver.findElement(By.xpath("(//button[@title='Info'])[1]")).click();
 	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("(//button[@aria-label='Close'])[1]")).click();
+	     driver.findElement(By.xpath("(//button[@title='Info'])[1]")).click();
+	     Thread.sleep(1000);
 	     
 	     /*Deletion of application*/
 	     List<WebElement> AppName1 = driver.findElements(By.xpath("//tr/td[3]"));
