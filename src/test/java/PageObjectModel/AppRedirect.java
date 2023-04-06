@@ -38,6 +38,6 @@ public class AppRedirect {
 			String ChildWindow = it.next();
 			Thread.sleep(4000);
 			driver.switchTo().window(ParentWindow);
-			
+			Thread.sleep(2000);
 	}
 }

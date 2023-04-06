@@ -70,15 +70,15 @@ public class StepDefination {
 //		users.UserEdit();
 //		users.UserAppRole();
 //		users.DeleteUser();
-//		menuscreen.AppMenu();
-//		menuscreen.Searchmenu();
-//		menuscreen.RoleMenuAssignement();
-//		menuscreen.MenuDeletion();
-		Redirect.Redirect();
+		menuscreen.AppMenu();
+		menuscreen.Searchmenu();
+		menuscreen.RoleMenuAssignement();
+		menuscreen.MenuDeletion();
+//		Redirect.Redirect();
 	}
 	
 	@AfterTest
 	public void LogOut() throws InterruptedException {
-//		InOut.Logout();
+		InOut.Logout();
 	}
 }
