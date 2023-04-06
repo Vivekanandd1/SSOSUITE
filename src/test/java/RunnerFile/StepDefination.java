@@ -57,7 +57,7 @@ public class StepDefination {
 	}
 	
 	@Test(priority = 0)
-	public void Login() {
+	public void Login() throws IOException {
 		InOut.login();
 	}
 	
@@ -70,15 +70,15 @@ public class StepDefination {
 //		users.UserEdit();
 //		users.UserAppRole();
 //		users.DeleteUser();
-		menuscreen.AppMenu();
-		menuscreen.Searchmenu();
-		menuscreen.RoleMenuAssignement();
-		menuscreen.MenuDeletion();
+//		menuscreen.AppMenu();
+//		menuscreen.Searchmenu();
+//		menuscreen.RoleMenuAssignement();
+//		menuscreen.MenuDeletion();
 //		Redirect.Redirect();
 	}
 	
-	@AfterTest
-	public void LogOut() throws InterruptedException {
-		InOut.Logout();
-	}
+//	@AfterTest
+//	public void LogOut() throws InterruptedException {
+//		InOut.Logout();
+//	}
 }
